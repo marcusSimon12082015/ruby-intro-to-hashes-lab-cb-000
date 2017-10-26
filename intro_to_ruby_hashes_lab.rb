@@ -8,8 +8,8 @@ end
 
 def monopoly
 	monopoly = {
-#		:railroads =>
-#		{
+		:railroads =>
+		{
 #			:pieces => 4,
 #			:rent_in_dollars=>{
 #				:one_piece_owned=>25,
@@ -34,7 +34,7 @@ def monopoly
 #					"mortgage_value"=>"$800"
 #				}
 #			}
-#		}
+		}
 	}
   monopoly
 end
