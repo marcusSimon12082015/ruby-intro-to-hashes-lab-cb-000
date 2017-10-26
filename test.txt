@@ -1,0 +1,37 @@
+
+working with hashes
+  instantiating
+    #new_hash
+      creates an empty hash and returns it
+  instantiating a hash with ONE key-value pair
+    #actor
+      creates a hash named actor whose key is a symbol :name and whose value is a string, 'Dwayne The Rock Johnson'
+
+building a multidimensional monopoly hash
+  adding a key-value pair to the top level of the monopoly hash
+    #monopoly
+      adds a key-value pair to the monopoly hash. The key should be :railroads and the value should be an empty hash (FAILED - 1)
+
+Failures:
+
+  1) building a multidimensional monopoly hash adding a key-value pair to the top level of the monopoly hash #monopoly adds a key-value pair to the monopoly hash. The key should be :railroads and the value should be an empty hash
+     Failure/Error: expect(monopoly[:railroads]).to eq({})
+       
+       expected: {}
+            got: {:pieces=>4, :rent_in_dollars=>{:one_piece_owned=>25, :two_pieces_owned=>50, :three_pieces_owned=>100, :four_pieces_owned=>200}, :names=>{:reading_railroad=>{"mortgage_value"=>"$100"}, :pennsylvania_railroad=>{"mortgage_value"=>"$200"}, :b_and_o_railroad=>{"mortgage_value"=>"$400"}, :shortline=>{"mortgage_value"=>"$800"}}}
+       
+       (compared using ==)
+       
+       Diff:
+       @@ -1 +1,4 @@
+       +:names => {:reading_railroad=>{"mortgage_value"=>"$100"}, :pennsylvania_railroad=>{"mortgage_value"=>"$200"}, :b_and_o_railroad=>{"mortgage_value"=>"$400"}, :shortline=>{"mortgage_value"=>"$800"}},
+       +:pieces => 4,
+       +:rent_in_dollars => {:one_piece_owned=>25, :two_pieces_owned=>50, :three_pieces_owned=>100, :four_pieces_owned=>200},
+     # ./spec/intro_to_ruby_hashes_lab_spec.rb:29:in `block (4 levels) in <top (required)>'
+
+Finished in 0.00269 seconds (files took 0.33244 seconds to load)
+3 examples, 1 failure
+
+Failed examples:
+
+rspec ./spec/intro_to_ruby_hashes_lab_spec.rb:28 # building a multidimensional monopoly hash adding a key-value pair to the top level of the monopoly hash #monopoly adds a key-value pair to the monopoly hash. The key should be :railroads and the value should be an empty hash
