@@ -1,0 +1,164 @@
+
+working with hashes
+  instantiating
+    #new_hash
+      creates an empty hash and returns it
+  instantiating a hash with ONE key-value pair
+    #actor
+      creates a hash named actor whose key is a symbol :name and whose value is a string, 'Dwayne The Rock Johnson' (FAILED - 1)
+
+building a multidimensional monopoly hash
+  adding a key-value pair to the top level of the monopoly hash
+    #monopoly
+      adds a key-value pair to the monopoly hash. The key should be :railroads and the value should be an empty hash (FAILED - 2)
+  adding key-value pairs to the second level of the monopoly hash that we started building in the #monopoly method
+    #monopoly_with_second_tier
+      sets the first key of the :railroads hash to a symbol, :pieces, whose value is the integer 4 (FAILED - 3)
+      sets the second key of the :railroads hash to a symbol, :names, whose value is an empty hash (FAILED - 4)
+      sets the third key of the :railroads hash to a symbol, :rent_in_dollars, whose value is an empty hash (FAILED - 5)
+  adding key-value pairs to the third level of the monopoly hash that we continued building in the #monopoly_with_second_tier method
+    #monopoly_with_third_tier
+      sets the 1st key of the :rent_in_dollars hash to a symbol, :one_piece_owned, whose value is the integer 25 (FAILED - 6)
+      sets the 2nd key of the :rent_in_dollars hash to a symbol, :two_pieces_owned, whose value is the integer 50 (FAILED - 7)
+      sets the 3rd key of the :rent_in_dollars hash to a symbol, :three_pieces_owned, whose value is the integer 100 (FAILED - 8)
+      sets the 4th key of the :rent_in_dollars hash to a symbol, :four_pieces_owned, whose value is the integer 200 (FAILED - 9)
+      sets the 1st key of the :names hash to a symbol, :reading_railroad, whose value is an empty hash (FAILED - 10)
+      sets the 2nd key of the :names hash to a symbol, :pennsylvania_railroad, whose value is an empty hash (FAILED - 11)
+      sets the 3rd key of the :names hash to a symbol, :b_and_o_railroad, whose value is an empty hash (FAILED - 12)
+      sets the 4th key of the :names hash to a symbol, :shortline, whose value is an empty hash (FAILED - 13)
+  fourth level of monopoly hash
+    #monopoly_with_fourth_tier
+      sets the 1st key of the :reading_railroad hash to a string, 'mortgage_value', whose value is '$100' (FAILED - 14)
+      sets the 1st key of the :pennsylvania_railroad hash to a string, 'mortgage_value', whose value is '$200' (FAILED - 15)
+      sets the 1st key of the :b_and_o_railroad hash to a string, 'mortgage_value', whose value is '$400' (FAILED - 16)
+      sets the 1st key of the :shortline hash to a string, `mortgage_value`, whose value is '$800' (FAILED - 17)
+
+Failures:
+
+  1) working with hashes instantiating a hash with ONE key-value pair #actor creates a hash named actor whose key is a symbol :name and whose value is a string, 'Dwayne The Rock Johnson'
+     Failure/Error: expect(actor[:name]).to eq("Dwayne The Rock Johnson")
+     NoMethodError:
+       undefined method `[]' for nil:NilClass
+     # ./spec/intro_to_ruby_hashes_lab_spec.rb:18:in `block (4 levels) in <top (required)>'
+
+  2) building a multidimensional monopoly hash adding a key-value pair to the top level of the monopoly hash #monopoly adds a key-value pair to the monopoly hash. The key should be :railroads and the value should be an empty hash
+     Failure/Error: expect(monopoly[:railroads]).to eq({})
+       
+       expected: {}
+            got: nil
+       
+       (compared using ==)
+     # ./spec/intro_to_ruby_hashes_lab_spec.rb:29:in `block (4 levels) in <top (required)>'
+
+  3) building a multidimensional monopoly hash adding key-value pairs to the second level of the monopoly hash that we started building in the #monopoly method #monopoly_with_second_tier sets the first key of the :railroads hash to a symbol, :pieces, whose value is the integer 4
+     Failure/Error: expect(monopoly_with_second_tier.values[0].values[0]).to eq(4)
+     NoMethodError:
+       undefined method `values' for nil:NilClass
+     # ./spec/intro_to_ruby_hashes_lab_spec.rb:42:in `block (4 levels) in <top (required)>'
+
+  4) building a multidimensional monopoly hash adding key-value pairs to the second level of the monopoly hash that we started building in the #monopoly method #monopoly_with_second_tier sets the second key of the :railroads hash to a symbol, :names, whose value is an empty hash
+     Failure/Error: expect(monopoly_with_second_tier[:railroads][:names]).to eq({})
+     NoMethodError:
+       undefined method `[]' for nil:NilClass
+     # ./spec/intro_to_ruby_hashes_lab_spec.rb:48:in `block (4 levels) in <top (required)>'
+
+  5) building a multidimensional monopoly hash adding key-value pairs to the second level of the monopoly hash that we started building in the #monopoly method #monopoly_with_second_tier sets the third key of the :railroads hash to a symbol, :rent_in_dollars, whose value is an empty hash 
+     Failure/Error: expect(monopoly_with_second_tier[:railroads][:rent_in_dollars]).to eq({})
+     NoMethodError:
+       undefined method `[]' for nil:NilClass
+     # ./spec/intro_to_ruby_hashes_lab_spec.rb:53:in `block (4 levels) in <top (required)>'
+
+  6) building a multidimensional monopoly hash adding key-value pairs to the third level of the monopoly hash that we continued building in the #monopoly_with_second_tier method #monopoly_with_third_tier sets the 1st key of the :rent_in_dollars hash to a symbol, :one_piece_owned, whose value is the integer 25
+     Failure/Error: expect(monopoly_with_third_tier.values[0].values.count).to eq(3)
+     NoMethodError:
+       undefined method `values' for nil:NilClass
+     # ./spec/intro_to_ruby_hashes_lab_spec.rb:62:in `block (4 levels) in <top (required)>'
+
+  7) building a multidimensional monopoly hash adding key-value pairs to the third level of the monopoly hash that we continued building in the #monopoly_with_second_tier method #monopoly_with_third_tier sets the 2nd key of the :rent_in_dollars hash to a symbol, :two_pieces_owned, whose value is the integer 50
+     Failure/Error: expect(monopoly_with_third_tier.keys.count).to eq(1)
+     NoMethodError:
+       undefined method `keys' for nil:NilClass
+     # ./spec/intro_to_ruby_hashes_lab_spec.rb:69:in `block (4 levels) in <top (required)>'
+
+  8) building a multidimensional monopoly hash adding key-value pairs to the third level of the monopoly hash that we continued building in the #monopoly_with_second_tier method #monopoly_with_third_tier sets the 3rd key of the :rent_in_dollars hash to a symbol, :three_pieces_owned, whose value is the integer 100
+     Failure/Error: expect(monopoly_with_third_tier.values[0].values.count).to eq(3)
+     NoMethodError:
+       undefined method `values' for nil:NilClass
+     # ./spec/intro_to_ruby_hashes_lab_spec.rb:76:in `block (4 levels) in <top (required)>'
+
+  9) building a multidimensional monopoly hash adding key-value pairs to the third level of the monopoly hash that we continued building in the #monopoly_with_second_tier method #monopoly_with_third_tier sets the 4th key of the :rent_in_dollars hash to a symbol, :four_pieces_owned, whose value is the integer 200
+     Failure/Error: expect(monopoly_with_third_tier.values[0].values.count).to eq(3)
+     NoMethodError:
+       undefined method `values' for nil:NilClass
+     # ./spec/intro_to_ruby_hashes_lab_spec.rb:83:in `block (4 levels) in <top (required)>'
+
+  10) building a multidimensional monopoly hash adding key-value pairs to the third level of the monopoly hash that we continued building in the #monopoly_with_second_tier method #monopoly_with_third_tier sets the 1st key of the :names hash to a symbol, :reading_railroad, whose value is an empty hash
+     Failure/Error: expect(monopoly_with_third_tier.keys.count).to eq(1)
+     NoMethodError:
+       undefined method `keys' for nil:NilClass
+     # ./spec/intro_to_ruby_hashes_lab_spec.rb:90:in `block (4 levels) in <top (required)>'
+
+  11) building a multidimensional monopoly hash adding key-value pairs to the third level of the monopoly hash that we continued building in the #monopoly_with_second_tier method #monopoly_with_third_tier sets the 2nd key of the :names hash to a symbol, :pennsylvania_railroad, whose value is an empty hash
+     Failure/Error: expect(monopoly_with_third_tier.keys.count).to eq(1)
+     NoMethodError:
+       undefined method `keys' for nil:NilClass
+     # ./spec/intro_to_ruby_hashes_lab_spec.rb:98:in `block (4 levels) in <top (required)>'
+
+  12) building a multidimensional monopoly hash adding key-value pairs to the third level of the monopoly hash that we continued building in the #monopoly_with_second_tier method #monopoly_with_third_tier sets the 3rd key of the :names hash to a symbol, :b_and_o_railroad, whose value is an empty hash
+     Failure/Error: expect(monopoly_with_third_tier.keys.count).to eq(1)
+     NoMethodError:
+       undefined method `keys' for nil:NilClass
+     # ./spec/intro_to_ruby_hashes_lab_spec.rb:106:in `block (4 levels) in <top (required)>'
+
+  13) building a multidimensional monopoly hash adding key-value pairs to the third level of the monopoly hash that we continued building in the #monopoly_with_second_tier method #monopoly_with_third_tier sets the 4th key of the :names hash to a symbol, :shortline, whose value is an empty hash
+     Failure/Error: expect(monopoly_with_third_tier.keys.count).to eq(1)
+     NoMethodError:
+       undefined method `keys' for nil:NilClass
+     # ./spec/intro_to_ruby_hashes_lab_spec.rb:114:in `block (4 levels) in <top (required)>'
+
+  14) building a multidimensional monopoly hash fourth level of monopoly hash #monopoly_with_fourth_tier sets the 1st key of the :reading_railroad hash to a string, 'mortgage_value', whose value is '$100'
+     Failure/Error: expect(monopoly_with_fourth_tier.values[0][:names].has_key?(:reading_railroad)).to be true
+     NoMethodError:
+       undefined method `values' for nil:NilClass
+     # ./spec/intro_to_ruby_hashes_lab_spec.rb:126:in `block (4 levels) in <top (required)>'
+
+  15) building a multidimensional monopoly hash fourth level of monopoly hash #monopoly_with_fourth_tier sets the 1st key of the :pennsylvania_railroad hash to a string, 'mortgage_value', whose value is '$200'
+     Failure/Error: expect(monopoly_with_fourth_tier.values[0][:names].has_key?(:pennsylvania_railroad)).to be true
+     NoMethodError:
+       undefined method `values' for nil:NilClass
+     # ./spec/intro_to_ruby_hashes_lab_spec.rb:133:in `block (4 levels) in <top (required)>'
+
+  16) building a multidimensional monopoly hash fourth level of monopoly hash #monopoly_with_fourth_tier sets the 1st key of the :b_and_o_railroad hash to a string, 'mortgage_value', whose value is '$400'
+     Failure/Error: expect(monopoly_with_fourth_tier.values[0][:names].has_key?(:b_and_o_railroad)).to be true
+     NoMethodError:
+       undefined method `values' for nil:NilClass
+     # ./spec/intro_to_ruby_hashes_lab_spec.rb:140:in `block (4 levels) in <top (required)>'
+
+  17) building a multidimensional monopoly hash fourth level of monopoly hash #monopoly_with_fourth_tier sets the 1st key of the :shortline hash to a string, `mortgage_value`, whose value is '$800'
+     Failure/Error: expect(monopoly_with_fourth_tier.values[0][:names].keys[3]).to eq(:shortline)
+     NoMethodError:
+       undefined method `values' for nil:NilClass
+     # ./spec/intro_to_ruby_hashes_lab_spec.rb:147:in `block (4 levels) in <top (required)>'
+
+Finished in 0.00372 seconds (files took 0.29888 seconds to load)
+18 examples, 17 failures
+
+Failed examples:
+
+rspec ./spec/intro_to_ruby_hashes_lab_spec.rb:17 # working with hashes instantiating a hash with ONE key-value pair #actor creates a hash named actor whose key is a symbol :name and whose value is a string, 'Dwayne The Rock Johnson'
+rspec ./spec/intro_to_ruby_hashes_lab_spec.rb:28 # building a multidimensional monopoly hash adding a key-value pair to the top level of the monopoly hash #monopoly adds a key-value pair to the monopoly hash. The key should be :railroads and the value should be an empty hash
+rspec ./spec/intro_to_ruby_hashes_lab_spec.rb:38 # building a multidimensional monopoly hash adding key-value pairs to the second level of the monopoly hash that we started building in the #monopoly method #monopoly_with_second_tier sets the first key of the :railroads hash to a symbol, :pieces, whose value is the integer 4
+rspec ./spec/intro_to_ruby_hashes_lab_spec.rb:46 # building a multidimensional monopoly hash adding key-value pairs to the second level of the monopoly hash that we started building in the #monopoly method #monopoly_with_second_tier sets the second key of the :railroads hash to a symbol, :names, whose value is an empty hash
+rspec ./spec/intro_to_ruby_hashes_lab_spec.rb:51 # building a multidimensional monopoly hash adding key-value pairs to the second level of the monopoly hash that we started building in the #monopoly method #monopoly_with_second_tier sets the third key of the :railroads hash to a symbol, :rent_in_dollars, whose value is an empty hash 
+rspec ./spec/intro_to_ruby_hashes_lab_spec.rb:61 # building a multidimensional monopoly hash adding key-value pairs to the third level of the monopoly hash that we continued building in the #monopoly_with_second_tier method #monopoly_with_third_tier sets the 1st key of the :rent_in_dollars hash to a symbol, :one_piece_owned, whose value is the integer 25
+rspec ./spec/intro_to_ruby_hashes_lab_spec.rb:67 # building a multidimensional monopoly hash adding key-value pairs to the third level of the monopoly hash that we continued building in the #monopoly_with_second_tier method #monopoly_with_third_tier sets the 2nd key of the :rent_in_dollars hash to a symbol, :two_pieces_owned, whose value is the integer 50
+rspec ./spec/intro_to_ruby_hashes_lab_spec.rb:74 # building a multidimensional monopoly hash adding key-value pairs to the third level of the monopoly hash that we continued building in the #monopoly_with_second_tier method #monopoly_with_third_tier sets the 3rd key of the :rent_in_dollars hash to a symbol, :three_pieces_owned, whose value is the integer 100
+rspec ./spec/intro_to_ruby_hashes_lab_spec.rb:81 # building a multidimensional monopoly hash adding key-value pairs to the third level of the monopoly hash that we continued building in the #monopoly_with_second_tier method #monopoly_with_third_tier sets the 4th key of the :rent_in_dollars hash to a symbol, :four_pieces_owned, whose value is the integer 200
+rspec ./spec/intro_to_ruby_hashes_lab_spec.rb:88 # building a multidimensional monopoly hash adding key-value pairs to the third level of the monopoly hash that we continued building in the #monopoly_with_second_tier method #monopoly_with_third_tier sets the 1st key of the :names hash to a symbol, :reading_railroad, whose value is an empty hash
+rspec ./spec/intro_to_ruby_hashes_lab_spec.rb:96 # building a multidimensional monopoly hash adding key-value pairs to the third level of the monopoly hash that we continued building in the #monopoly_with_second_tier method #monopoly_with_third_tier sets the 2nd key of the :names hash to a symbol, :pennsylvania_railroad, whose value is an empty hash
+rspec ./spec/intro_to_ruby_hashes_lab_spec.rb:104 # building a multidimensional monopoly hash adding key-value pairs to the third level of the monopoly hash that we continued building in the #monopoly_with_second_tier method #monopoly_with_third_tier sets the 3rd key of the :names hash to a symbol, :b_and_o_railroad, whose value is an empty hash
+rspec ./spec/intro_to_ruby_hashes_lab_spec.rb:112 # building a multidimensional monopoly hash adding key-value pairs to the third level of the monopoly hash that we continued building in the #monopoly_with_second_tier method #monopoly_with_third_tier sets the 4th key of the :names hash to a symbol, :shortline, whose value is an empty hash
+rspec ./spec/intro_to_ruby_hashes_lab_spec.rb:124 # building a multidimensional monopoly hash fourth level of monopoly hash #monopoly_with_fourth_tier sets the 1st key of the :reading_railroad hash to a string, 'mortgage_value', whose value is '$100'
+rspec ./spec/intro_to_ruby_hashes_lab_spec.rb:131 # building a multidimensional monopoly hash fourth level of monopoly hash #monopoly_with_fourth_tier sets the 1st key of the :pennsylvania_railroad hash to a string, 'mortgage_value', whose value is '$200'
+rspec ./spec/intro_to_ruby_hashes_lab_spec.rb:138 # building a multidimensional monopoly hash fourth level of monopoly hash #monopoly_with_fourth_tier sets the 1st key of the :b_and_o_railroad hash to a string, 'mortgage_value', whose value is '$400'
+rspec ./spec/intro_to_ruby_hashes_lab_spec.rb:145 # building a multidimensional monopoly hash fourth level of monopoly hash #monopoly_with_fourth_tier sets the 1st key of the :shortline hash to a string, `mortgage_value`, whose value is '$800'
